@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Light gray background */
+}
+
+.gallery-header {
+    background-color: #333; /* Dark background for the header */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1.8em;
+    border-bottom: 5px solid #222; /* A subtle darker border */
+}
+
+.gallery-container {
+    max-width: 1200px; /* Max width of the gallery content */
+    margin: 40px auto; /* Center the container with some top/bottom margin */
+    padding: 0 20px; /* Padding on sides for smaller screens */
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between grid items */
+}
+
+.gallery-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px; /* Rounded corners for the image containers */
+    overflow: hidden; /* Ensures image rounded corners stay within container */
+    padding: 10px; /* Padding inside the border, giving space around the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex; /* To center content if needed */
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 150px; /* Fixed height for thumbnails */
+    object-fit: cover; /* Ensures image covers the area, cropping if necessary */
+    border-radius: 10px; /* Rounded corners for the image itself */
+    display: block; /* Remove extra space below image */
+}
+
+.blank-item {
+    background-color: #f0f0f0; /* Color for the blank slots */
+    border: 1px dashed #ccc; /* Dashed border for blank slots */
+}
+
+/* Optional: Basic responsiveness adjustments */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+    }
+}
